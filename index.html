@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renan Nunes | Desenvolvedor Web</title>
+    <meta name="description" content="Portfólio de Renan Nunes, Desenvolvedor Web especializado em React, JavaScript e soluções digitais modernas.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #0f172a;
+            color: #e2e8f0;
+            scroll-behavior: smooth;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+        }
+        
+        .skill-bar {
+            transition: width 1.5s ease-in-out;
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .section {
+            scroll-margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-slate-900/80 backdrop-blur-md z-50 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <span class="text-2xl font-bold gradient-text">RN</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="nav-link px-3 py-2 text-sm font-medium">Início</a>
+                        <a href="#about" class="nav-link px-3 py-2 text-sm font-medium">Sobre</a>
+                        <a href="#skills" class="nav-link px-3 py-2 text-sm font-medium">Habilidades</a>
+                        <a href="#projects" class="nav-link px-3 py-2 text-sm font-medium">Projetos</a>
+                        <a href="#experience" class="nav-link px-3 py-2 text-sm font-medium">Experiência</a>
+                        <a href="#contact" class="nav-link px-3 py-2 text-sm font-medium">Contato</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-300 hover:text-white focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-slate-800/95">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="block px-3 py-2 text-base font-medium">Início</a>
+                <a href="#about" class="block px-3 py-2 text-base font-medium">Sobre</a>
+                <a href="#skills" class="block px-3 py-2 text-base font-medium">Habilidades</a>
+                <a href="#projects" class="block px-3 py-2 text-base font-medium">Projetos</a>
+                <a href="#experience" class="block px-3 py-2 text-base font-medium">Experiência</a>
+                <a href="#contact" class="block px-3 py-2 text-base font-medium">Contato</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="section min-h-screen flex items-center pt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-4">Olá, eu sou <span class="gradient-text">Renan Nunes</span></h1>
+                    <h2 class="text-2xl md:text-3xl font-semibold mb-6 text-blue-400">Desenvolvedor Web</h2>
+                    <p class="text-lg md:text-xl mb-8 text-gray-300">"Transformando ideias em soluções digitais inteligentes"</p>
+                    <div class="flex space-x-4">
+                        <a href="#projects" class="px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg font-medium hover:opacity-90 transition-opacity">Ver Portfólio</a>
+                        <a href="#contact" class="px-6 py-3 border border-blue-400 text-blue-400 rounded-lg font-medium hover:bg-blue-400 hover:bg-opacity-10 transition-colors">Entrar em Contato</a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative w-64 h-64 md:w-80 md:h-80 animate-float">
+                        <div class="absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full opacity-20 blur-xl"></div>
+                        <div class="relative w-full h-full flex items-center justify-center">
+                            <img src="https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80" alt="Renan Nunes" class="w-3/4 h-3/4 object-cover rounded-full border-4 border-blue-500/30">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section py-20 bg-slate-800/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold mb-12 text-center gradient-text">Sobre Mim</h2>
+            <div class="flex flex-col md:flex-row gap-12">
+                <div class="md:w-1/2">
+                    <p class="mb-6 text-gray-300">Desenvolvedor web em formação com base sólida em engenharia de software, programação web e design responsivo.</p>
+                    <p class="mb-6 text-gray-300">Concluiu o curso técnico em informática no IFNMG, com foco em redes, manutenção, lógica e linguagens como Python e JavaScript.</p>
+                    <p class="mb-6 text-gray-300">Atualmente cursando Engenharia de Software na UNINTER, aprofundando conhecimentos em arquitetura de software, segurança da informação e IA.</p>
+                    <p class="mb-6 text-gray-300">Meus hobbies são estudar sobre a faculdade, jogar futebol e sair com meus amigos.</p>
+                </div>
+                <div class="md:w-1/2">
+                    <p class="mb-6 text-gray-300">Experiência em React, HTML, CSS, JS/TS, bancos de dados MySQL/PostgreSQL/MongoDB.</p>
+                    <p class="mb-6 text-gray-300">Perfil colaborativo, comunicativo e com foco em boas práticas de desenvolvimento.</p>
+                    <div class="flex space-x-4 mt-8">
+                        <div class="bg-slate-700/50 p-4 rounded-lg">
+                            <h3 class="text-blue-400 font-semibold mb-2">Front-end</h3>
+                            <p class="text-sm text-gray-300">React, Vue, HTML, CSS, JavaScript, TypeScript</p>
+                        </div>
+                        <div class="bg-slate-700/50 p-4 rounded-lg">
+                            <h3 class="text-purple-400 font-semibold mb-2">Back-end</h3>
+                            <p class="text-sm text-gray-300">Python, Node.js, SQL, NoSQL</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold mb-12 text-center gradient-text">Habilidades Técnicas</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Frontend Skills -->
+                <div class="bg-slate-800/50 p-6 rounded-xl">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-blue-500/10 p-2 rounded-lg mr-4">
+                            <i class="fas fa-laptop-code text-blue-400 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Frontend</h3>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-medium">HTML5</span>
+                                <span class="text-sm text-gray-400">95%</span>
+                            </div>
+                            <div class="w-full bg-slate-700 rounded-full h-2">
+                                <div class="skill-bar bg-blue-500 h-2 rounded-full" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-medium">CSS3/Tailwind</span>
+                                <span class="text-sm text-gray-400">90%</span>
+                            </div>
+                            <div class="w-full bg-slate-700 rounded-full h-2">
+                                <div class="skill-bar bg-blue-500 h-2 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-medium">JavaScript</span>
+                                <span class="text-sm text-gray-400">85%</span>
+                            </div>
+                            <div class="w-full bg-slate-700 rounded-full h-2">
+                                <div class="skill-bar bg-blue-500 h-2 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-medium">React</span>
+                                <span class="text-sm text-gray-400">80%</span>
+                            </div>
+                            <div class="w-full bg-slate-700 rounded-full h-2">
+                                <div class="skill-bar bg-blue-500 h-2 rounded-full" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Backend Skills -->
+                <div class="bg-slate-800/50 p-6 rounded-xl">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-purple-500/10 p-2 rounded-lg mr-4">
+                            <i class="fas fa-server text-purple-400 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Backend & Outros</h3>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-medium">Python</span>
+                                <span class="text-sm text-gray-400">80%</span>
+                            </div>
+                            <div class="w-full bg-slate-700 rounded-full h-2">
+                                <div class="skill-bar bg-purple-500 h-2 rounded-full" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-medium">SQL (MySQL/PostgreSQL)</span>
+                                <span class="text-sm text-gray-400">75%</span>
+                            </div>
+                            <div class="w-full bg-slate-700 rounded-full h-2">
+                                <div class="skill-bar bg-purple-500 h-2 rounded-full" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-medium">NoSQL (MongoDB)</span>
+                                <span class="text-sm text-gray-400">70%</span>
+                            </div>
+                            <div class="w-full bg-slate-700 rounded-full h-2">
+                                <div class="skill-bar bg-purple-500 h-2 rounded-full" style="width: 70%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-medium">Git/GitHub</span>
+                                <span class="text-sm text-gray-400">85%</span>
+                            </div>
+                            <div class="w-full bg-slate-700 rounded-full h-2">
+                                <div class="skill-bar bg-purple-500 h-2 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Other Skills -->
+            <div class="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="bg-slate-800/50 p-4 rounded-lg flex items-center">
+                    <i class="fab fa-figma text-purple-400 mr-3"></i>
+                    <span>Figma</span>
+                </div>
+                <div class="bg-slate-800/50 p-4 rounded-lg flex items-center">
+                    <i class="fas fa-mobile-alt text-blue-400 mr-3"></i>
+                    <span>Responsividade</span>
+                </div>
+                <div class="bg-slate-800/50 p-4 rounded-lg flex items-center">
+                    <i class="fas fa-globe text-blue-400 mr-3"></i>
+                    <span>Multi-navegador</span>
+                </div>
+                <div class="bg-slate-800/50 p-4 rounded-lg flex items-center">
+                    <i class="fab fa-vuejs text-green-400 mr-3"></i>
+                    <span>Vue.js</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+<section id="projects" class="section py-20 bg-slate-800/50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-3xl font-bold mb-12 text-center gradient-text">Projeto em Destaque</h2>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
+      <!-- Único Projeto -->
+      <div class="bg-slate-800 rounded-xl overflow-hidden card-hover max-w-md mx-auto">
+        <img src="imgs/hotelbanner2.png" 
+             alt="Hotel JS - Renan Nunes" 
+             class="w-full h-48 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-bold mb-2">Hotel JS</h3>
+          <p class="text-gray-300 mb-4">
+            Website moderno e responsivo para o Hotel JS, com sistema de reservas via WhatsApp, 
+            design elegante, mapa de localização, depoimentos de clientes e menu mobile interativo.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="text-xs bg-green-500/20 text-green-400 px-2 py-1 rounded">HTML</span>
+            <span class="text-xs bg-green-500/20 text-green-400 px-2 py-1 rounded">TailwindCSS</span>
+            <span class="text-xs bg-green-500/20 text-green-400 px-2 py-1 rounded">JavaScript</span>
+          </div>
+          <div class="flex">
+            <a href="https://hotel-js-rouge.vercel.app/" target="_blank" 
+               class="text-sm text-green-400 hover:underline flex items-center">
+              <i class="fas fa-external-link-alt mr-1 text-xs"></i> Ver Projeto Online
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Experience Section -->
+    <section id="experience" class="section py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold mb-12 text-center gradient-text">Experiência Profissional</h2>
+            
+            <div class="space-y-8">
+                <!-- Professional Experience -->
+                <div class="bg-slate-800/50 p-6 rounded-xl">
+                    <div class="flex items-start">
+                        <div class="bg-blue-500/10 p-3 rounded-lg mr-4">
+                            <i class="fas fa-briefcase text-blue-400 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold">Estágio em Telecom</h3>
+                            <p class="text-blue-400 mb-2">TecDias</p>
+                            <p class="text-gray-300 mb-4">Apoio administrativo, criação de planilhas, atendimento ao cliente e colaboração em equipe.</p>
+                            <p class="text-sm text-gray-400">Jan 2022 - Dez 2022</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Education -->
+<div class="bg-slate-800/50 p-6 rounded-xl space-y-6">
+    <div class="flex items-start">
+        <div class="bg-purple-500/10 p-3 rounded-lg mr-4">
+            <i class="fas fa-graduation-cap text-purple-400 text-xl"></i>
+        </div>
+        <div>
+            <h3 class="text-xl font-semibold">Formação Acadêmica</h3>
+            
+            <div class="mb-4">
+                <h4 class="text-blue-400 font-medium">Engenharia de Software</h4>
+                <p class="text-gray-300">UNINTER</p>
+                <p class="text-sm text-gray-400">2023 - Presente (em andamento)</p>
+            </div>
+            
+            <div>
+                <h4 class="text-blue-400 font-medium">Técnico em Informática</h4>
+                <p class="text-gray-300">IFNMG</p>
+                <p class="text-sm text-gray-400">2019 - 2021 (concluído)</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Languages -->
+    <div class="flex items-start">
+        <div class="bg-green-500/10 p-3 rounded-lg mr-4">
+            <i class="fas fa-language text-green-400 text-xl"></i>
+        </div>
+        <div>
+            <h3 class="text-xl font-semibold">Idiomas</h3>
+            
+            <div class="mb-2">
+                <h4 class="text-blue-400 font-medium">Português</h4>
+                <p class="text-gray-300">Nativo</p>
+            </div>
+            
+            <div>
+                <h4 class="text-blue-400 font-medium">Inglês</h4>
+                <p class="text-gray-300">Básico</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section py-20 bg-slate-800/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold mb-12 text-center gradient-text">Entre em Contato</h2>
+            
+            <div class="flex flex-col md:flex-row gap-12">
+                <div class="md:w-1/2">
+                    <h3 class="text-xl font-semibold mb-4">Informações de Contato</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <div class="bg-blue-500/10 p-2 rounded-lg mr-4">
+                                <i class="fas fa-envelope text-blue-400"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-400">E-mail</p>
+                                <a href="mailto:renannunesteixeira86@gmail.com" class="text-blue-400 hover:underline">renannunesteixeira86@gmail.com</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="bg-purple-500/10 p-2 rounded-lg mr-4">
+                                <i class="fas fa-phone text-purple-400"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-400">Telefone</p>
+                                <a href="tel:+5538999146765" class="text-blue-400 hover:underline">(38) 99914-6765</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="bg-pink-500/10 p-2 rounded-lg mr-4">
+                                <i class="fas fa-map-marker-alt text-pink-400"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-400">Localização</p>
+                                <p class="text-blue-400">Minas Gerais, Brasil</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                                        <div class="mt-8">
+                        <h3 class="text-xl font-semibold mb-4">Redes Sociais</h3>
+                        <div class="flex space-x-4">
+                            <a href="https://github.com/renannunes1" target="_blank" class="bg-slate-700/50 p-3 rounded-full hover:bg-blue-500/20 transition-colors">
+                                <i class="fab fa-github text-xl"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/renan-nunes-teixeira-938bb0355/" target="_blank" class="bg-slate-700/50 p-3 rounded-full hover:bg-blue-500/20 transition-colors">
+                                <i class="fab fa-linkedin-in text-xl"></i>
+                            </a>
+                            <a href="https://www.instagram.com/renan.nun3s/?igsh=dWlqcWV6Njlpa3li&utm_source=qr#" target="_blank" class="bg-slate-700/50 p-3 rounded-full hover:bg-blue-500/20 transition-colors">
+                                <i class="fab fa-instagram text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="mt-8">
+                        <a href="docs/Renan_NunesTeixeira_Currículo para emrpesas tech.pdf" class="px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg font-medium hover:opacity-90 transition-opacity inline-flex items-center">
+                            <i class="fas fa-download mr-2"></i> Baixar Currículo
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <h3 class="text-xl font-semibold mb-4">Envie uma Mensagem</h3>
+                    <form class="space-y-4">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-300 mb-1">Nome</label>
+                            <input type="text" id="name" class="w-full bg-slate-700/50 border border-slate-600 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Seu nome">
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-300 mb-1">E-mail</label>
+                            <input type="email" id="email" class="w-full bg-slate-700/50 border border-slate-600 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="seu@email.com">
+                        </div>
+                        
+                        <div>
+                            <label for="subject" class="block text-sm font-medium text-gray-300 mb-1">Assunto</label>
+                            <input type="text" id="subject" class="w-full bg-slate-700/50 border border-slate-600 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Assunto da mensagem">
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-300 mb-1">Mensagem</label>
+                            <textarea id="message" rows="5" class="w-full bg-slate-700/50 border border-slate-600 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Sua mensagem"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg font-medium hover:opacity-90 transition-opacity w-full">Enviar Mensagem</button>
+                    </form>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <span class="text-2xl font-bold gradient-text">Renan Nunes</span>
+                    <p class="text-gray-400 mt-1">Desenvolvedor Web</p>
+                </div>
+                
+                <div class="flex space-x-6">
+                    <a href="#home" class="text-gray-400 hover:text-white transition-colors">Início</a>
+                    <a href="#about" class="text-gray-400 hover:text-white transition-colors">Sobre</a>
+                    <a href="#projects" class="text-gray-400 hover:text-white transition-colors">Projetos</a>
+                    <a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contato</a>
+                </div>
+            </div>
+            
+            <div class="mt-8 pt-8 border-t border-slate-800 text-center text-gray-400 text-sm">
+                <p>&copy; 2023 Renan Nunes. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Close mobile menu when clicking on a link
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+        
+        // Animate skill bars when they come into view
+        const skillBars = document.querySelectorAll('.skill-bar');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const width = entry.target.style.width;
+                    entry.target.style.width = '0';
+                    setTimeout(() => {
+                        entry.target.style.width = width;
+                    }, 100);
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        skillBars.forEach(bar => {
+            observer.observe(bar);
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</html>
